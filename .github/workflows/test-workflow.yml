@@ -1,0 +1,12 @@
+name: Prueba de Disparador de Workflow
+
+on:
+  push:
+    branches: [ "main" ] # <-- ¡MUY IMPORTANTE! Si tu rama es "master", cámbialo a "master".
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje de prueba
+        run: echo "El workflow de prueba se ha disparado correctamente."
