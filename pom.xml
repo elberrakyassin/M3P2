@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Versión del Modelo de Objeto del Proyecto (POM) -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Coordenadas del Proyecto: Identifican tu proyecto de forma única -->
+    <!-- Cambia esto para que coincida con tu proyecto -->
+    <groupId>com.tu-organizacion</groupId>
+    <artifactId>mi-app-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging> <!-- Empaquetar el resultado como un archivo .jar -->
+
+    <!-- Propiedades del proyecto, como la versión de Java -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- MUY IMPORTANTE: Aseguramos que Maven use Java 17, como en el workflow -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <!-- Aquí se declaran las librerías o dependencias que tu proyecto necesita -->
+    <dependencies>
+        <!-- Ejemplo: Añadir JUnit 5 para pruebas unitarias -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope> <!-- Esta dependencia solo se usa para las pruebas -->
+        </dependency>
+    </dependencies>
+
+    <!-- Configuración del proceso de construcción (build) -->
+    <build>
+        <plugins>
+            <!-- Plugin para asegurar que se compila con la versión correcta de Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <!-- Plugin para generar el archivo JAR ejecutable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
